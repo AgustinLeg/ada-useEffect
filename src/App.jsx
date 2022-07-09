@@ -3,7 +3,13 @@
 // import { ComponenteA } from "./components/ComponenteA";
 // import { ComponenteB } from "./components/ComponenteB";
 // import { Contador } from "./components/Contador";
-import { Contador2 } from "./components/Contador2";
+import { Button, Stack } from "@chakra-ui/react";
+import { useState } from "react";
+import { Apis } from "./components/Apis";
+import { CleanUp } from "./components/CleanUp";
+import { CountDown } from "./components/CountDown";
+import { MouseMove } from "./components/MouseMove";
+// import { Contador2 } from "./components/Contador2";
 // import { LocalStorage } from "./components/LocalStorage";
 import { Navbar } from "./components/Navbar";
 
@@ -15,9 +21,12 @@ import { Navbar } from "./components/Navbar";
 
 function App() {
   // const [title, setTitle] = useState();
+  const [show, setShow] = useState(true);
+
+  const toggle = () => setShow(!show);
 
   return (
-    <div>
+    <Stack spacing={16}>
       <Navbar />
       {/* <Heading>{title}</Heading>
       <Button onClick={() => setTitle("titulo nuevo")}>Cambiar titulo</Button>
@@ -28,8 +37,13 @@ function App() {
       </HStack>
       <Contador />
       <LocalStorage /> */}
-      <Contador2 />
-    </div>
+      {/* <Contador2 /> */}
+      {/* {show && <CleanUp />} */}
+      {/* <Button onClick={toggle}>toggle</Button>
+      <CountDown initialCount={5} />
+      <MouseMove /> */}
+      <Apis />
+    </Stack>
   );
 }
 
